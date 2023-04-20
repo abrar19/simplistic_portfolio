@@ -89,24 +89,49 @@ const contactForm = document.getElementById('contact-form'),
             setTimeout(()=>{
               contactMessage.textContent = '';
             }, 5000)
-          });
+          }, 
+          // Send Error
+          (error) => {
+            alert("Oops something is not working!", error);
+          })
         }
       } 
       
-      // Remove message after five seconds
-    
-      // Send Error
-        //OOPS! SOMETHING HAS FAILED...
     
     // To clear the input field
 
       contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]');
 
+const scrollActive = () => {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight,
+          sectionTop = current.offsetTop - 58,
+          sectionId = current.getAttribute('id'),
+          sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+          if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            sectionsClass.classList.add('active-link');
+          }else{
+            sectionsClass.classList.remove('active-link');
+          }
+  })
+}
+
+window.addEventListener('scroll', scrollActive);
 
 /*=============== SHOW SCROLL UP ===============*/ 
+const scrollUp = () => {
+  const scrollup = document.getElementById('scroll-up');
 
+  this.scrollY >= 350 ? scrollup.classList.add('show-scroll') : scrollup.classList.remove('show-scroll')
+}
+
+window.addEventListener('scroll', scrollUp);
 
 /*=============== DARK LIGHT THEME ===============*/ 
 

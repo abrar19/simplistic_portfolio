@@ -245,7 +245,9 @@ body.dark-theme {
 }
 
 /* Active link */
-
+.active-link{
+  color: var(--title-color);
+}
 
 /*=============== HOME ===============*/
 .home__container{
@@ -838,16 +840,88 @@ skills__subtitle{
 }
 
 /*=============== FOOTER ===============*/
+.footer__container{
+  padding: 3rem 0 7rem;
+  text-align: center;
+}
 
+.footer__title{
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+    margin-bottom: 1rem;
+}
+
+.footer__list,
+.footer__social{
+  display: flex;
+  justify-content: center;
+}
+
+.footer__list{
+  margin: 2.5rem 0;
+  gap: 2.5rem;
+}
+
+.footer__link{
+  color: var(--title-color);
+}
+
+.footer__link:hover{
+  text-decoration: underline;
+}
+
+.footer__social{
+  gap: 1.25rem;
+}
+
+.footer__social-link{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  transition: transform .3s;
+}
+
+.footer__social-link:hover{
+  transform: translateY(-0.15rem);
+}
+
+.footer__copy{
+  display: block;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  margin-top: 4.5rem;
+}
 
 /*=============== SCROLL BAR ===============*/
-
+::-webkit-scrollbar{
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(207, 4%, 75%);
+}
 
 /*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -30%;
+  display: inline-flex;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 12px hsla(207, 24%, 35%, .15);
+  padding: .35rem;
+  border-radius: .25rem;
+  font-size: 1.1rem;
+  color: var(--title-color);
+  z-index: var(--z-tooltip);
+  transition: bottom .3s, transform .3s;
+}
 
+.scrollup:hover{
+  transform: translateY(-0.25rem);
+}
 
 /* Show Scroll Up*/
-
+.show-scroll{
+  bottom: 7.5rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
