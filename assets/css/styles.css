@@ -96,7 +96,18 @@ img {
 }
 
 /*=============== THEME ===============*/
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .3s;
+}
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
@@ -413,7 +424,7 @@ body.dark-theme {
   margin-bottom: .25rem;
 }
 
-skills__subtitle{
+.skills__subtitle{
   font-size: var(--tiny-font-size);
   color: var(--text-color-light);
 }
