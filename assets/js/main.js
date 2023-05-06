@@ -164,10 +164,12 @@ themeButton.addEventListener('click', ()=>{
 })
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-
-
-
-
+const scrollHeader = () =>{
+  const header = document.getElementById('header');
+  // When the scroll is greater than 50 viewport height, add the scroll-header
+  this.scrollY >= 50 ? header.classList.add('bg-header') : header.classList.remove('bg-header')
+}
+window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
