@@ -379,6 +379,7 @@ body.dark-theme {
 /*=============== SKILLS ===============*/
 .skills__container{
   row-gap: 3.5rem;
+  justify-content: center;
 }
 
 .skills__title{
