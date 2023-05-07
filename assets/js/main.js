@@ -1,3 +1,10 @@
+// Preloader
+const loader = document.getElementById('preloader');
+
+window.addEventListener('load', ()=>{
+  loader.style.display = 'none';
+})
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
@@ -143,7 +150,7 @@ const selectedTheme = localStorage.getItem('selected-theme');
 const selectedIcon = localStorage.getItem('selected-icon');
 
 //We obtain the current theme by validating the dark theme class
-const getCurrentTheme = () => document.body.classList.contains('darkTheme') ? 'dark' : 'light';
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line';
 
 //We validate if the user has chosen a theme previously
@@ -172,4 +179,16 @@ const scrollHeader = () =>{
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 1500,
+  delay: 400,
+  reset: true
+})
 
+sr.reveal('.home__data , .projects__container, .testimonial__container, .footer__container');
+sr.reveal('.home__info div', {delay: 300, origin: 'bottom', interval: 100});
+sr.reveal('.skills__content:nth-child(1), .contact__content:nth-child(1)', {origin: 'left'})
+sr.reveal('.skills__content:nth-child(2), .contact__content:nth-child(2)', {origin: 'right'})
+sr.reveal('.qualification__content, .services__card', {interval: 100})
